@@ -1,0 +1,54 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  /* padding: 200rpx 0; */
+  box-sizing: border-box;
+} 
+button{
+  border: none;
+  border-radius: 0;
+}
+button::after{
+  border: none;
+  border-radius: 0;
+}
+.dreamBtn{
+  color: #fff;
+  background: #c3c3c3;
+  width: 645rpx;
+  height: 95rpx;
+  border-radius: 10rpx;
+  font-size: 36rpx;
+  position: fixed;
+  bottom: 100rpx;
+  left: 50%;
+  margin-left: -322rpx;
+}
+.card-img1{
+  width: 90rpx;
+  height: 100rpx;
+}
+.bg-green{
+  background: #24d9ad; 
+}
+.tabedBtn{
+  color: #fff;
+  background: #c3c3c3;
+  width: 620rpx;
+  height: 95rpx;
+  border-radius: 10rpx;
+  font-size: 36rpx;
+}
+.mgt20{
+  margin-top: 20rpx;
+}
+.f-green{
+  color: #24d9ad
+}
+.f-yellow{
+  color: #ffa800
+}

@@ -1,0 +1,124 @@
+/* pages/list-detail/list-detail.wxss */
+page{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #F7F7F7;
+  padding-bottom:20rpx;
+
+}
+.top{
+  width: 690rpx;
+  height: 536rpx;
+  position: relative;
+  box-sizing: border-box;
+   margin-top: 30rpx;
+}
+.img{
+  width: 100%;
+  height: 100%;
+  border-radius: 10rpx;
+}
+.mask{
+  width: 100%;
+  height: 100%;
+  background: #333;
+  opacity: 0.5; 
+  border-radius: 20rpx;
+}
+.content{
+  position: absolute;
+  width: 380rpx;
+  height: 40rpx; 
+  border-radius: 20rpx;
+  text-align: center;
+  bottom: 20rpx;
+  left: 50rpx; 
+  font-size: 26rpx;
+  color: #fff;
+}
+.text{
+  position: absolute;
+  left: 30rpx;
+  top: 2rpx;
+}
+.title{
+  min-height:98rpx;
+  line-height: 1.5;
+  font-size: 30rpx;
+  color: #333;
+}
+.item{
+  width: 690rpx;
+  background: #fff;
+  border-radius: 10rpx;
+  display: flex;
+  margin-top: 20rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.info{
+  display: flex;
+  align-items: center;
+  font-size: 25rpx;
+  margin-top:10rpx;
+
+}
+.userIcon{
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 40rpx;
+  margin-right: 10rpx;
+}
+.username{
+  font-size: 25rpx;
+  color: #999;
+}
+.fontColor{
+  font-size: 25rpx;
+  color: #ccc;
+}
+.mr10{
+  margin-right: 10rpx;
+}
+.card-img{
+  width: 94rpx;
+  height: 98rpx;
+  margin-bottom: 15rpx;
+}
+.left{
+  width: 520rpx; 
+}
+.right{
+  width: 130rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  /* padding-left:44rpx; */
+
+}
+.dreamBtn{
+  color: #fff;
+  background: #24d9ad;
+  width: 645rpx;
+  height: 95rpx;
+  border-radius: 10rpx;
+  font-size: 36rpx;
+  position: fixed;
+  bottom: 100rpx;
+  left: 50%;
+  margin-left: -322rpx;
+}
+.f-green{
+  color: #24d9ad
+}
+.form-btn{
+  width: 100%;
+  height: 150rpx;
+  position: absolute;
+  right: 0;
+  top: 0;
+  opacity:0;
+
+}

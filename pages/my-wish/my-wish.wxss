@@ -1,0 +1,98 @@
+/* pages/my-wish/my-wish.wxss */
+page{
+  
+  background: #f8f8f8;
+  padding-bottom: 120rpx;
+}
+.container{
+  padding: 0 30rpx;
+}
+.time-wrap{
+  display: flex;
+  margin-top: 40rpx;
+  align-items: center;
+}
+.icon{
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 20rpx;
+}
+.time{
+  font-size: 30rpx;
+  color: #888888;
+}
+.item{
+  margin-top: 20rpx;
+  padding: 24rpx;
+  font-size: 30rpx;
+  line-height: 1.5;
+  box-sizing: border-box;
+  width: 686rpx;
+  min-height: 74rpx;
+  border-radius: 10rpx;
+  background: #fff;
+  display: flex;
+
+}
+.card{
+  width: 90rpx;
+  height: 100rpx;
+}
+.item-content{
+  min-width: 500rpx;
+  display: flex;
+  flex-direction: column;
+}
+.card-wrap{
+  width: 150rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+.silvery-tips{
+  font-size: 22rpx;
+  color: #fbbb26;
+  margin-top: 40rpx;
+}
+.gold-tips{
+  font-size: 22rpx;
+  color: #999;
+  margin-top: 30rpx;
+}
+.bless{
+  color: #24d9ac;
+  font-size: 25rpx;
+  margin-top: 20rpx;
+  word-break:keep-all;           /* 不换行 */
+  white-space:nowrap;          /* 不换行 */
+}
+.bottom{
+  position: fixed;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  bottom: 0;
+  left: 0;
+  height: 100rpx;
+   box-shadow: 0rpx 20rpx 30rpx #888888; 
+  /* box-shadow:0rpx 2rpx 50rpx #888888; */
+
+}
+.btn{
+  width: 100%;
+  border-radius: 0;
+  padding: 0;
+  border: none;
+  background: #fff;
+  font-size: 36rpx;
+  color: #9b9b9b;
+  line-height: 100rpx;
+}
+.btn::after{
+  border: none;
+}
+.btnChecked{
+  color: #24d9ad;  
+  border-bottom: 5rpx solid #24d9ad
+}

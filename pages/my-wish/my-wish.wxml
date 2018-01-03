@@ -1,0 +1,27 @@
+<!--pages/my-wish/my-wish.wxml-->
+<view class='container'>
+  <view wx:for="{{arrs}}">
+    <view class='time-wrap'>
+      <image mode='aspectFit' src='{{timeIcon}}' class='icon'></image>
+      <view class='time'>{{item.created}}</view>
+    </view>
+    <!-- <view class='item'>
+  希望宝贝家里的沙发啦大家发精神分裂建安费老大是否记得拉上飞机离开大数据看来
+</view> -->
+    <view class='item' data-id='{{item.id}}' bindtap='toWishMes'>
+      <view class='item-content'>
+        <text>  {{item.content}}</text>
+        <text class='silvery-tips' wx:if="{{item.expired==0?true:false}}">  {{item.wish_card_name}}魔法即将耗尽\n点击这里延长魔法效果>></text>
+        <text class='gold-tips' wx:if="{{item.expired>0?true:false}}">  {{item.wish_card_name}}还将在{{item.expired}}天内守护你的心愿成真>></text>
+      </view>
+      <view class='card-wrap' wx:if="{{item.wish_card_id!=0}}">
+        <image class='card' src='{{item.wish_card_icon}}'></image>
+        <text class='bless'>{{item.bless_count}}人祝福</text>
+      </view>
+    </view>
+  </view>
+  <view class='bottom'>
+    <button class="btn" bindtap='toWishWall'>心愿墙</button>
+    <button class="btn btnChecked">我的心愿</button>
+  </view>
+</view>

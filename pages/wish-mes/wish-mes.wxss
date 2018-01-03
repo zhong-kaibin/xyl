@@ -1,0 +1,243 @@
+/* pages/wish-mes/wish-mes.wxss */
+page{
+  background: #084e66;
+}
+.container{
+   align-items: left;
+   padding: 0 50rpx; 
+}
+.card-warp{
+  width: 680rpx;
+  height: 300rpx;
+  line-height: 300rpx;
+  display: flex;
+  justify-content:center; 
+  align-items: center;
+}
+.content{
+  font-size: 30rpx;
+  color: #c4cad5;
+  display: flex; 
+  justify-content:flex-start; 
+  margin-bottom: 70rpx;
+  align-self: flex-start;
+
+}
+.user-info{
+  align-self:flex-start;
+  display: flex;
+  align-items: center;
+}
+.user-head{
+  width: 40rpx;
+  height: 40rpx; 
+  border-radius: 40rpx;
+  margin-right: 10rpx;
+}
+.username{
+  font-size: 24rpx;
+  color: #acafb4;
+}
+.card-info{
+  font-size: 30rpx;
+  color: #777777;
+}
+.card-userinfo{
+  font-size: 27rpx;
+  color: #777777;
+  /* display: flex; */
+  text-align: center;
+}
+.luck-wrap{
+  width: 680rpx;
+  height: 600rpx;
+  background: #ffffff;
+  border-top-right-radius: 10rpx;
+  border-top-left-radius: 10rpx;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  margin-left: -340rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card-bottom{
+  height: 250rpx;
+  display: flex;
+  align-items: center;
+}
+.dreamBtn {
+  width: 620rpx;
+  font-size: 36rpx;
+}
+.pop-btn{
+  width: 620rpx;
+  left: 50%;
+  margin-left: -310rpx;
+  color: #fff;
+  /* background: #c3c3c3; */
+  border-radius: 10rpx;
+  font-size: 36rpx;
+  position: absolute;
+  bottom: 50rpx;
+}
+.pop{
+  width: 690rpx;
+  height: 700rpx;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  margin-left: -345rpx;
+  margin-top: -350rpx;
+  border:2rpx solid #24d9ad;
+  background: #084e67;
+  border-radius: 10rpx; 
+}
+
+.mask{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: #333333;
+  opacity: 0.6;
+}
+.pop-wrap{
+  border:2rpx solid #24d9ad
+}
+.swiper-wrap{
+  position: relative;
+  padding-top: 60rpx;
+}
+swiper-item{
+  text-align:center;
+  /* margin-top: 60rpx; */
+}
+.swiper{
+  width: 100%;
+  height: 270rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.slide-image{
+  width: 190rpx;
+  height: 190rpx;
+  border-radius: 190rpx;
+  /* width: 200rpx; */
+}
+.swiper-text{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 30rpx;
+  color: #bdced8;
+}
+.card-tips{
+  text-align: center;
+  line-height: 1.5;
+}
+.left-btn{
+  width: 30rpx;
+  height: 56rpx;
+  position: absolute;
+  left: 50rpx;
+  top: 136rpx;
+}
+.right-btn{
+  width: 30rpx;
+  height: 56rpx;
+  position: absolute;
+  right: 50rpx;
+  top: 136rpx;
+}
+.price{
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.swiper-wrap .dots{  
+  position: absolute;  
+  left: 0;  
+  right: 0;  
+  bottom: 20rpx;  
+  display: flex;  
+  justify-content: center;  
+}  
+.closeImg{
+  width: 44rpx;
+  height: 98rpx;
+  position: absolute;
+  right: 0;
+  top: -98rpx;
+}
+.card-use{
+  width: 520rpx;
+  height: 110rpx;
+  margin-top: 80rpx;
+  margin-bottom: 80rpx;
+  display: flex;
+  justify-content: space-around;
+}
+/* .cardday-wrap{
+  display: flex;
+} */
+.cardday-wrap{
+  display: flex;
+  align-items:baseline;
+
+}
+.card-days{
+  width: 70rpx;
+  height: 34rpx;
+  font-size: 24rpx;
+  background: #e92f30;
+  color: #fff;
+  border-radius: 30rpx;
+ margin-left: -20rpx
+}
+.head-wrap{
+  width: 360rpx;
+  height: 52rpx;
+  overflow: hidden;
+  margin-top: 40rpx;
+  margin-bottom: 80rpx;
+  display: flex;
+  justify-content: center;
+}
+.wish-people{
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50rpx;
+  margin-right: 20rpx;
+}
+.share-btn{
+  color: #fff;
+  background: #c3c3c3;
+  width: 620rpx;
+  height: 95rpx;
+  border-radius: 10rpx;
+  font-size: 36rpx;
+  margin-top: 20rpx;
+}
+.bg-green{
+  background: #24d9ad; 
+}
+.wish-process{
+  font-size: 30rpx;
+  line-height: 1.5;
+  
+}
+.mgb60{
+  margin-bottom: 60rpx;
+}
+.bg-white{
+  background: #fff;
+}
+.f-green{
+  color: #24d9ad
+}
+.border-green{
+  border: 1rpx solid #24d9ad;
+}

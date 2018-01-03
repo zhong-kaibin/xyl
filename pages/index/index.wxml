@@ -1,0 +1,21 @@
+<!--index.wxml-->
+<view class="container">
+    <view class='item' wx:for="{{wallData}}"  data-id='{{item.id}}' bindtap='toWishList' data-index='{{index}}'>
+      <image mode='scaleToFill' src='{{item.icon}}' class='img'></image>
+      <view class="content">
+        <view class='mask'></view>
+        <text class='text'>已有{{item.wish_count}}个用户在此许愿</text>
+      </view>  
+    </view>
+    <!-- <view class='item' >
+      <image mode='aspectFit' src='{{imgSrc}}' class='img'></image>
+      <view class="content">
+        <view class='mask'></view>
+      <text class='text'>已有19888个用户在此许愿</text>
+      </view>  
+    </view> -->
+    <view class='bottom'>
+      <button class="btn btnChecked">心愿墙</button>
+      <button class="btn" bindtap='toMyWish'>我的心愿</button>
+    </view> 
+</view>

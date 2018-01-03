@@ -1,0 +1,40 @@
+<!--pages/to-wish/to-wish.wxml-->
+<view class='title'>每个小小的心愿都值得认真对待</view>
+<view class='swiper-wrap'>
+  <swiper class="swiper" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{indicatorColored}}" current="{{currentIndex}}" bindchange='swiperChange'>
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <image src="{{item.src}}" mode='aspectFit' class="slide-image" width="355" height="150" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class='swiper-btn'>
+  <view class='left-area'><image class='left-btn' src='{{leftSrc}}' bindtap='last' wx:if="{{leftStatus}}"></image></view>
+  <view class='right-area'><image class='right-btn' src='{{rightSrc}}' bindtap='next' wx:if="{{rightStatus}}"></image></view>
+    
+    
+  </view>
+    <view class='swiper-text' wx:if="{{currentIndex==0}}">
+    <view class='price'></view>
+    <text class='card-tips'>你可以选择一个神奇幸运物\n让它用强大的魔法守护你的心愿成真</text>
+  </view> 
+
+  <!-- <view class='swiper-text' wx:if="{{currentIndex==1}}">
+    <view class='price'>￥1.99</view>
+    <text class='card-tips'>银色的许愿牌将在1天内\n用强大的魔法守护你的心愿成真</text>
+  </view>  -->
+  <view class='swiper-text' wx:for="{{cardData}}" wx:if="{{currentIndex==item.id}}">
+    <view class='price'>￥{{item.price/100}}</view>
+    <text class='card-tips'>{{item.name}}将在<text class='f-yellow'>{{item.guardian_time}}天</text>内\n用强大的魔法守护你的心愿成真</text>
+  </view>
+</view>
+
+<view class='text-wrap'>
+  <textarea class='textarea' placeholder-class="textarea-placeholder" placeholder-style="line-height:2.4;" cursor-spacing="30rpx" maxlength="36" bindblur="textConfirm"  placeholder="{{wallContent}}" value='{{content}}'></textarea>
+  <view class='line'></view>
+  <view class='chose'>  
+    <view class='nm-wrap'><image class='nm-icon' src='{{nmIcon}}' bindtap='changNm' data-status='{{nmStatus}}'></image> 匿名许愿</view>
+    <view><text class="{{textNum>=36?'f-red':''}}">{{textNum}}</text>/36</view>
+  </view>
+</view>
+<button class='dreamBtn bg-green' bindtap='addWish' disabled='{{active==true?"":"true"}}'>许下心愿</button>

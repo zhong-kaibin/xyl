@@ -1,0 +1,18 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/list-detail/list-detail",
+    "pages/to-wish/to-wish",
+    "pages/my-wish/my-wish",
+    "pages/wish-mes/wish-mes",
+    "pages/wx-pay/wx-pay",
+    "pages/look-wish/look-wish",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#084e66",
+    "navigationBarTitleText": "许愿灵",
+    "navigationBarTextStyle":"#fff"
+  }
+}

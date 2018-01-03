@@ -1,0 +1,28 @@
+<!--pages/list-detail/list-detail.wxml-->
+<view class='top'>
+  <image mode='scaleToFill' src='{{wallData.detail}}' class='img'></image>
+  <view class="content">
+    <view class='mask'></view>
+  <text class='text'>已有{{wallData.wish_count}}个用户在此许愿</text>
+  </view>  
+</view>
+<view class='item' wx:for="{{arrs}}">
+  <view class='left'>
+    <view class='title'>{{item.content}}</view>
+    <view class='info'>
+      <image class='userIcon' src='{{item.avatar}}'></image>
+      <view class='username mr10'>{{item.nickname}} </view>
+      <view class='fontColor mr10'>{{item.total_seconds}}</view>
+      <view class='fontColor mr10'>许下心愿 </view>
+    </view>
+  </view>
+  <form bindsubmit="formSubmit" report-submit="true" data-id="{{item.id}}" data-index="{{index}}"> 
+  <view class='right' wx:if="{{item.wish_card_id!=0}}">
+    <button formType="submit" class='form-btn'  data-id="{{item.id}}" data-index="{{index}}"></button>
+    <image class='card-img' mode='aspectFit' src='{{item.wish_card_icon}}'  data-id="{{item.id}}" data-index="{{index}}"></image>
+    <view class="username {{item.is_bless==1?'f-green':''}}">{{item.bless_count}}人祝福</view>
+  </view>
+  </form>
+</view>
+
+<button class='dreamBtn' bindtap='toWish'>我要许愿</button>

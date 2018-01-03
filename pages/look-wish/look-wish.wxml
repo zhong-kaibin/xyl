@@ -1,0 +1,4 @@
+<!--pages/look-wish/look-wish.wxml-->
+<view class='container'>
+<button class='dreamBtn bg-green' bindtap='toMyWish'>查看心愿</button>
+</view>

@@ -1,0 +1,114 @@
+<!--pages/wish-mes/wish-mes.wxml-->
+<view class='container'>
+  <view class='card-warp'>
+    <image src='{{cardIcon}}' class='card-img1'></image>
+  </view>
+  <view class='content'>
+    <text>{{content}}</text>
+  </view>
+  <view class='user-info'>
+    <image class='user-head' src='{{avatar}}'></image>
+    <view class='username'>{{nickname}}</view>
+  </view>
+  <!-- 未购买幸运卡的显示 -->
+  <view class='luck-wrap' wx:if="{{!isHasCard}}">
+    <view class='card-bottom'>
+      <image src='{{silvery}}' class='card-img1'></image>
+    </view>
+    <view class='card-info'>有幸运物的保护，心愿会更灵哦~</view>
+    <button class='dreamBtn bg-green' bindtap='getCard'>获得幸运物</button>
+  </view>
+  <!-- end未购买幸运卡的显示 -->
+
+  <view class='luck-wrap' wx:if="{{isHasCard}}">
+    <!-- 购买幸运卡未被祝福的显示 -->
+    <view wx:if="{{!isBlessed}}">
+      <view class='card-use'>
+        <image src='{{loveImg}}' mode='aspectFit' class='card-img1'></image>
+        <image src='{{arrow}}' mode='aspectFit' class='card-img1'></image>
+        <view class='cardday-wrap'>
+          <image src='{{silvery}}' mode='aspectFit' class='card-img1'></image>
+          <view class='card-days'>+1天</view>
+        </view>
+      </view>
+      <view class='card-userinfo'>每收集5个好友的祝福,可增加1天守护时间哦~</view>
+    </view>
+    <!-- end购买幸运卡未被祝福的显示 -->
+    <!-- 购买幸运卡被祝福后获得祝福的显示 -->
+    <view wx:if="{{isBlessed}}">
+      <view class='head-wrap'>
+        <block wx:for="{{icons}}">
+          <image src='{{item}}' mode='aspectFit' class='wish-people'></image>
+        </block>
+      </view>
+      <view class='card-userinfo mgb60'>
+        <text class='wish-process'>此心愿已收获{{blessCount}}人的祝福\n增加守护时间{{protectDays}}天~</text>
+      </view>
+    </view>
+    <view wx:if="{{isCreator==1?true:false}}">
+      <button class='share-btn bg-green' open-type='share'>分享给好友收集祝福</button>
+      <button class='share-btn bg-white f-green border-green' bindtap='getStone'>购买能量石,增加守护时间</button>
+    </view>
+    <view wx:if="{{isCreator==0?true:false}}">
+    <form bindsubmit="formSubmit" report-submit="true" data-id="{{item.id}}" data-index="{{index}}">
+      <button class='share-btn bg-green' wx:if="{{!blessStatus}}" formType="submit">送上祝福</button>
+      <button class='tabedBtn mgt20' wx:if="{{blessStatus}}">已为TA送出祝福</button>
+      <button class='share-btn bg-green' bindtap='toWish'>我要许愿</button>
+    </form>  
+    </view>
+  </view>
+  <!-- 购买幸运卡被祝福后获得祝福的显示 -->
+  <!-- 幸运卡选择 -->
+  <view class='mask' wx:if="{{popStatus}}"></view>
+  <view class='pop' wx:if="{{popStatus}}">
+    <view class='swiper-wrap'>
+      <swiper class="swiper" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{indicatorColored}}" current="{{currentIndex}}" bindchange='swiperChange'>
+        <block wx:for="{{cardData}}">
+          <swiper-item>
+            <image src="{{item.icon}}" mode='aspectFit' class="slide-image" width="355" height="150" />
+          </swiper-item>
+        </block>
+      </swiper>
+      <view class='swiper-btn'>
+        <image class='left-btn' src='{{leftSrc}}' bindtap='last' wx:if="{{leftStatus}}"></image>
+        <image class='right-btn' src='{{rightSrc}}' bindtap='next' wx:if="{{rightStatus}}"></image>
+      </view>
+      <view class='swiper-text' wx:for="{{cardData}}" wx:if="{{currentIndex==item.id-1}}">
+        <view class='price'>￥{{item.price/100}}</view>
+        <text class='card-tips'>{{item.name}}将在<text class='f-yellow'>{{item.guardian_time}}天</text>内\n用强大的魔法守护你的心愿成真</text>
+      </view>
+    </view>
+    <view>
+      <image src='{{closeImg}}' class='closeImg' bindtap='colsePop'></image>
+    </view>
+    <button class='pop-btn bg-green' bindtap='toPay'>选好了</button>
+  </view>
+  <!-- end幸运卡选择 -->
+  <!-- 能量石选择 -->
+  <view class='mask' wx:if="{{popStatus1}}"></view>
+  <view class='pop' wx:if="{{popStatus1}}">
+    <view class='swiper-wrap'>
+      <swiper class="swiper" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{indicatorColored}}" current="{{currentIndex}}" bindchange='swiperChange'>
+        <block wx:for="{{stoneData}}">
+          <swiper-item>
+            <image src="{{item.icon}}" mode='aspectFit' class="slide-image" width="355" height="150" />
+          </swiper-item>
+        </block>
+      </swiper>
+      <view class='swiper-btn'>
+        <image class='left-btn' src='{{leftSrc}}' bindtap='last1' wx:if="{{leftStatus}}"></image>
+        <image class='right-btn' src='{{rightSrc}}' bindtap='next1' wx:if="{{rightStatus}}"></image>
+      </view>
+      <view class='swiper-text' wx:for="{{stoneData}}" wx:if="{{currentIndex==item.id-3}}">
+        <view class='price'>￥{{item.price/100}}</view>
+        <text class='card-tips'>蕴含魔力的能量石可为幸运物\n增加<text class='f-yellow'>{{item.guardian_time}}天</text>守护时间</text>
+      </view>
+    </view>
+    <view>
+      <image src='{{closeImg}}' class='closeImg' bindtap='colsePop'></image>
+    </view>
+    <button class='pop-btn bg-green' bindtap='toPay'>选好了</button>
+  </view>
+  <!-- end能量石选择 -->
+
+</view>

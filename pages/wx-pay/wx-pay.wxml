@@ -1,0 +1,14 @@
+<!--pages/wx-pay/wx-pay.wxml-->
+<view class='container'>
+  <view class='label'>姓名</view>
+  <view class='userinfo'><image class='user-head' src='{{userHead}}'></image><text class='username'>{{username}}</text></view>
+  <view class='card-wrap'>
+    <view class='img-wrap'><image mode='aspectFit' class='cardImg' src='{{info.icon}}'></image></view>
+    <view class='card-info'><text>{{info.name}}将会在{{info.guardian_time}}天内\n用强大的魔法守护你的心愿成真</text></view>
+    <view class='price'>需支付:￥{{info.price/100}}</view>
+  </view>
+
+    <view class='buy-info'>已有{{cardNum}}人购买</view>
+    <button class='dreamBtn bg-green' bindtap='toPay'>微信支付</button>
+
+</view>
